@@ -425,7 +425,7 @@ func (s *Service) uploadFile(fullPath string, data io.Reader, randomPublicId boo
 				}
 			}
 		}
-		return "v" + string(upInfo.Version), nil
+		return "v" + fmt.Sprint(upInfo.Version), nil
 	} else {
 		return fullPath, errors.New("Request error: " + resp.Status)
 	}
